@@ -62,7 +62,7 @@ Travel, reflections, and discoveries we make along the way — by **Kesha** and 
 
 ## Contact
 
-- Email: [hello@twounderthesky.com](mailto:hello@twounderthesky.com)
+- Website: [https://twounderthesky.github.io/twounderthesky/](https://twounderthesky.github.io/twounderthesky/)
 - Instagram: [@2underthesky](https://instagram.com/2underthesky)
 
 That’s it—write in Markdown, keep images in `source/assets/images/`, rebuild before pushing, and the site stays in sync.
