@@ -52,6 +52,9 @@ Travel, reflections, and discoveries we make along the way — by **Kesha** and 
    ```
 
    GitHub Pages will publish from the `docs/` folder automatically.
+   
+   That’s it—write in Markdown, keep images in `source/assets/images/`, rebuild before pushing, and the site stays in sync.
+
 
 ## Helpful files
 
@@ -64,5 +67,3 @@ Travel, reflections, and discoveries we make along the way — by **Kesha** and 
 
 - Website: [https://twounderthesky.github.io/twounderthesky/](https://twounderthesky.github.io/twounderthesky/)
 - Instagram: [@2underthesky](https://instagram.com/2underthesky)
-
-That’s it—write in Markdown, keep images in `source/assets/images/`, rebuild before pushing, and the site stays in sync.
