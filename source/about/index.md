@@ -12,7 +12,7 @@ We (Kesha & Akshat) are a crazy couple who love to travel! Most of our travel in
 
 Currently, we are based out of Bangalore and both of us work in the IT industry. This gives us the flexibility to travel at our own pace.
 
-This blog is our way to try and remember the journeys that we make and share our learnings. In addition to travel, we might also write about other random topics which come to our mind!
+This blog is our way to document and share our journeys - from travel adventures and random explorations to cooking experiments, professional break experiences, spirituality, and everything else that shapes our lives. We write about what moves us, what we learn, and what we want to remember.
 
 ### About Kesha!
 
