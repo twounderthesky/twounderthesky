@@ -6,7 +6,7 @@ language: 'en-uk'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-url: https://twounderthesky.github.io
+url: /
 baseurl: /twounderthesky
 
 # Website info
@@ -16,7 +16,7 @@ cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
-# CNAME: twounderthesky.github.io
+CNAME: aksh1t.github.io/twounderthesky
 
 # Social info
 navigation: True # show the navbar links
