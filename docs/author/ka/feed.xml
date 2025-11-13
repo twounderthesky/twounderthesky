@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
-  <link href="http://localhost:4000/twounderthesky/author/ka/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="http://localhost:4000/twounderthesky/" rel="alternate" type="text/html" />
-  <updated>2025-11-13T16:42:45+05:30</updated>
-  <id>http://localhost:4000/twounderthesky/author/ka/feed.xml</id>
+  <link href="https://twounderthesky.github.io/twounderthesky/author/ka/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://twounderthesky.github.io/twounderthesky/" rel="alternate" type="text/html" />
+  <updated>2025-11-13T17:21:59+05:30</updated>
+  <id>https://twounderthesky.github.io/twounderthesky/author/ka/feed.xml</id>
 
   
   
@@ -16,7 +16,7 @@
   
 
   
-    <subtitle>A travel blog by &lt;b&gt;Kesha&lt;/b&gt; &amp; &lt;b&gt;Akshat&lt;/b&gt;</subtitle>
+    <subtitle>Travel, reflections, and discoveries we make along the way - by &lt;b&gt;Kesha&lt;/b&gt; and &lt;b&gt;Akshat&lt;/b&gt;.</subtitle>
   
 
   

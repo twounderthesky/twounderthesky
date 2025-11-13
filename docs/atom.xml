@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> - Articles</title>
-    <description>A travel blog by &lt;b&gt;Kesha&lt;/b&gt; &amp; &lt;b&gt;Akshat&lt;/b&gt;</description>
+    <description>Travel, reflections, and discoveries we make along the way - by &lt;b&gt;Kesha&lt;/b&gt; and &lt;b&gt;Akshat&lt;/b&gt;.</description>
     <link>
-    http://localhost:4000</link>
+    https://twounderthesky.github.io</link>
     
       
       <item>
@@ -14,8 +14,8 @@
         
         <pubDate>Thu, 13 Nov 2025 00:00:00 +0530</pubDate>
         <link>
-        http://localhost:4000/reflections-after-i-left-my-job</link>
-        <guid isPermaLink="true">http://localhost:4000/reflections-after-i-left-my-job</guid>
+        https://twounderthesky.github.io/reflections-after-i-left-my-job</link>
+        <guid isPermaLink="true">https://twounderthesky.github.io/reflections-after-i-left-my-job</guid>
       </item>
       
     
@@ -29,8 +29,8 @@
         
         <pubDate>Mon, 23 Apr 2018 13:30:00 +0530</pubDate>
         <link>
-        http://localhost:4000/being-in-the-himalayas</link>
-        <guid isPermaLink="true">http://localhost:4000/being-in-the-himalayas</guid>
+        https://twounderthesky.github.io/being-in-the-himalayas</link>
+        <guid isPermaLink="true">https://twounderthesky.github.io/being-in-the-himalayas</guid>
       </item>
       
     
