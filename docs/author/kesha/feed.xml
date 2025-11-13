@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
-  <link href="https://twounderthesky.github.io/twounderthesky/author/kesha/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://twounderthesky.github.io/twounderthesky/" rel="alternate" type="text/html" />
-  <updated>2025-11-13T13:03:41+05:30</updated>
-  <id>https://twounderthesky.github.io/twounderthesky/author/kesha/feed.xml</id>
+  <link href="http://localhost:4000/twounderthesky/author/kesha/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/twounderthesky/" rel="alternate" type="text/html" />
+  <updated>2025-11-13T13:19:30+05:30</updated>
+  <id>http://localhost:4000/twounderthesky/author/kesha/feed.xml</id>
 
   
   
@@ -16,7 +16,7 @@
   
 
   
-    <subtitle>Travel, reflections, and discoveries we make along the way — by &lt;b&gt;Kesha&lt;/b&gt; and &lt;b&gt;Akshat&lt;/b&gt;.</subtitle>
+    <subtitle>A travel blog by &lt;b&gt;Kesha&lt;/b&gt; &amp; &lt;b&gt;Akshat&lt;/b&gt;</subtitle>
   
 
   
@@ -37,11 +37,11 @@
   
     <entry>
       <title type="html">Being in the Himalayas</title>
-      <link href="https://twounderthesky.github.io/twounderthesky/being-in-the-himalayas" rel="alternate" type="text/html" title="Being in the Himalayas" />
+      <link href="http://localhost:4000/twounderthesky/being-in-the-himalayas" rel="alternate" type="text/html" title="Being in the Himalayas" />
       <published>2018-04-23T13:30:00+05:30</published>
       <updated>2018-04-23T13:30:00+05:30</updated>
-      <id>https://twounderthesky.github.io/twounderthesky/being-in-the-himalayas</id>
-      <content type="html" xml:base="https://twounderthesky.github.io/twounderthesky/being-in-the-himalayas">&lt;p&gt;I got an opportunity to go for a trek - Everest Base Camp (via Gokyo lakes) in April 2018. Although we couldn’t complete it because of various reasons including health issues, we did spend 11 days surrounded by mountains. I thought of sharing my experience of life in the Himalayas.&lt;/p&gt;
+      <id>http://localhost:4000/twounderthesky/being-in-the-himalayas</id>
+      <content type="html" xml:base="http://localhost:4000/twounderthesky/being-in-the-himalayas">&lt;p&gt;I got an opportunity to go for a trek - Everest Base Camp (via Gokyo lakes) in April 2018. Although we couldn’t complete it because of various reasons including health issues, we did spend 11 days surrounded by mountains. I thought of sharing my experience of life in the Himalayas.&lt;/p&gt;
 
 &lt;p&gt;Talking about Himalayas and actually going there and being in it is a whole different experience. People say that you find yourself in Himalayas and now I realise why.&lt;/p&gt;
 

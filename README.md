@@ -60,4 +60,9 @@ Travel, reflections, and discoveries we make along the way — by **Kesha** and 
 - `source/_data/tags.yml` — tag descriptions and cover images
 - `source/about/index.md` — “About us” page
 
+## Contact
+
+- Email: [hello@twounderthesky.com](mailto:hello@twounderthesky.com)
+- Instagram: [@2underthesky](https://instagram.com/2underthesky)
+
 That’s it—write in Markdown, keep images in `source/assets/images/`, rebuild before pushing, and the site stays in sync.
