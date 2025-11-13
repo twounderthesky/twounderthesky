@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
-  <link href="http://localhost:4000/author/ka/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2022-01-16T23:24:14+05:30</updated>
-  <id>http://localhost:4000/author/ka/feed.xml</id>
+  <link href="https://twounderthesky.github.io/twounderthesky/author/ka/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://twounderthesky.github.io/twounderthesky/" rel="alternate" type="text/html" />
+  <updated>2025-11-13T12:42:18+05:30</updated>
+  <id>https://twounderthesky.github.io/twounderthesky/author/ka/feed.xml</id>
 
   
   
