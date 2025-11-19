@@ -85,22 +85,27 @@
         </div>
     {% endif %}
 
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });</script>
-
-    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <!-- jQuery - Load first as other scripts depend on it -->
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    
+    <!-- highlight.js for code syntax highlighting -->
+    <!-- Note: highlight.js should be loaded elsewhere if needed -->
+    <script>
+    $(document).ready(function() {
+      if (typeof hljs !== 'undefined') {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      }
+    });
+    </script>
+
+    <!-- Fitvids, which makes all video embeds responsive -->
     <script type="text/javascript" src="{{ site.baseurl }}assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
 
 
     <!-- Paginator increased to "infinit" in _config.yml -->
@@ -122,12 +127,34 @@
     <!-- Add Google Analytics  -->
     {% include analytics.html %}
 
+    <!-- Supabase and Feature Scripts -->
+    <!-- IMPORTANT: Set config BEFORE loading supabase-client.js -->
+    <script>
+        // Inject Supabase configuration from site config
+        window.SUPABASE_URL = '{{ site.supabase_url }}';
+        window.SUPABASE_ANON_KEY = '{{ site.supabase_anon_key }}';
+        window.MAILCHIMP_URL = '{{ site.mailchimp_url }}';
+        console.log('Config injected:', {
+            url: window.SUPABASE_URL ? 'Set' : 'Missing',
+            key: window.SUPABASE_ANON_KEY ? 'Set' : 'Missing'
+        });
+    </script>
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/supabase-client.js"></script>
+    
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
-    {% if page.class == "post-template" %}
+    <!-- Always load these scripts - they check for elements before running -->
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/likes.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/comments.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/page-views.js"></script>
+    
+    {% if page.class == "post-template" or page.class.class == "post-template" %}
         {% include post-scripts.html %}
-    {% elsif page.class == "page-template" %}
+    {% elsif page.class == "page-template" or page.class.class == "page-template" %}
         {% include page-scripts.html %}
     {% endif %}
+    
+    <!-- Mailchimp subscription script (load on all pages) -->
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/mailchimp.js"></script>
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
     <!-- ghost_foot -->

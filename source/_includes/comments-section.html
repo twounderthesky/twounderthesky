@@ -1,0 +1,168 @@
+<!-- Comments Section -->
+<section class="post-comments-section">
+    <h3 class="comments-title">Comments</h3>
+    
+    <div id="comments-container" class="comments-container">
+        <p class="loading-comments">Loading comments...</p>
+    </div>
+
+    <form id="comment-form" class="comment-form" data-post-slug="{{ page.url | remove_first: '/' | replace: '/', '-' | replace: '.html', '' }}">
+        <h4 class="comment-form-title">Leave a Comment</h4>
+        <div class="form-group">
+            <label for="comment-name">Name (optional)</label>
+            <input type="text" id="comment-name" name="name" class="comment-input" placeholder="Your name">
+        </div>
+        <div class="form-group">
+            <label for="comment-text">Comment *</label>
+            <textarea id="comment-text" name="comment" class="comment-textarea" rows="5" required placeholder="Write your comment here..."></textarea>
+        </div>
+        <button type="submit" class="comment-submit">Post Comment</button>
+    </form>
+</section>
+
+<style>
+.post-comments-section {
+    margin: 40px 0;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.comments-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #15171a;
+}
+
+.comments-container {
+    margin-bottom: 40px;
+    min-height: 50px;
+}
+
+.loading-comments {
+    color: #666;
+    font-style: italic;
+}
+
+.no-comments {
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.comment-item {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #3eb0ef;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.comment-author {
+    color: #15171a;
+    font-size: 16px;
+}
+
+.comment-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.comment-body {
+    color: #15171a;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.comment-form {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.comment-form-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #15171a;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #15171a;
+    font-weight: 500;
+}
+
+.comment-input,
+.comment-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.comment-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.comment-input:focus,
+.comment-textarea:focus {
+    outline: none;
+    border-color: #3eb0ef;
+    box-shadow: 0 0 0 3px rgba(62, 176, 239, 0.1);
+}
+
+.comment-submit {
+    background: #3eb0ef;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comment-submit:hover {
+    background: #2a9dd8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(62, 176, 239, 0.3);
+}
+
+.comment-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+
