@@ -26,12 +26,12 @@ instagram: 2underthesky
 
 # Supabase Configuration (for likes, comments, and page views)
 # ⚠️ DO NOT commit real values! Use GitHub Secrets or _config_secrets.yml
-supabase_url: YOUR_SUPABASE_URL_HERE
-supabase_anon_key: YOUR_SUPABASE_ANON_KEY_HERE
+supabase_url: https://gixqggwnrzajypbijogy.supabase.co
+supabase_anon_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdpeHFnZ3ducnphanlwYmlqb2d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1MjU0NzcsImV4cCI6MjA3OTEwMTQ3N30.EwdFrmYHY95yYRMSTj1AkvMrrSM1cqZ42_9n8ilWgGI
 
 # Mailchimp Configuration (for email subscriptions)
 # ⚠️ DO NOT commit real values! Use GitHub Secrets or _config_secrets.yml
-mailchimp_url: YOUR_MAILCHIMP_FORM_URL_HERE
+mailchimp_url: https://gmail.us9.list-manage.com/subscribe/post?u=0d7274d37b2da3a1c139584eb&id=7a0585e9cc&f_id=00ecc2e1f0
 
 # Disqus
 disqus: False

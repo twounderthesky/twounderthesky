@@ -51,10 +51,10 @@
             postSlug = window.location.pathname.replace(/\/$/, '').replace(/^\//, '') || 'index';
         }
 
-        // Check if user has already liked (this will also update display)
-        checkUserLiked(postSlug, likeButton, likeCount);
+        // Check if user has already liked
+        checkUserLiked(postSlug, likeButton);
         
-        // Load current like count (this will also update display)
+        // Load current like count
         loadLikeCount(postSlug, likeCount);
 
         // Handle like button click
@@ -68,11 +68,7 @@
         try {
             const client = window.BlogSupabase.getClient();
             if (!client) {
-                console.error('Supabase client not initialized');
-                if (likeCountElement) {
-                    likeCountElement.textContent = '0';
-                    likeCountElement.style.display = 'none';
-                }
+                if (likeCountElement) likeCountElement.textContent = '0';
                 return;
             }
 
@@ -82,34 +78,19 @@
                 .eq('post_slug', postSlug);
 
             if (error) {
-                console.error('Error loading like count:', error);
-                if (likeCountElement) {
-                    likeCountElement.textContent = '0';
-                    likeCountElement.style.display = 'inline';
-                }
+                if (likeCountElement) likeCountElement.textContent = '0';
                 return;
             }
 
             const likeCount = count || 0;
-            if (likeCountElement) {
-                likeCountElement.textContent = likeCount;
-            }
-            
-            // Update button display based on like status
-            const likeButton = document.getElementById('like-button');
-            if (likeButton) {
-                updateLikeButtonDisplay(likeButton, likeCountElement);
-            }
+            if (likeCountElement) likeCountElement.textContent = likeCount;
         } catch (error) {
             console.error('Error in loadLikeCount:', error);
-            if (likeCountElement) {
-                likeCountElement.textContent = '0';
-                likeCountElement.style.display = 'none';
-            }
+            if (likeCountElement) likeCountElement.textContent = '0';
         }
     }
 
-    async function checkUserLiked(postSlug, likeButton, likeCountElement) {
+    async function checkUserLiked(postSlug, likeButton) {
         try {
             const userIdentifier = await window.BlogSupabase.getUserIdentifier();
             const client = window.BlogSupabase.getClient();
@@ -127,32 +108,29 @@
                 return;
             }
 
-            if (data && data.length > 0) {
+            const hasLiked = data && data.length > 0;
+            if (hasLiked) {
                 likeButton.classList.add('liked');
                 likeButton.setAttribute('aria-pressed', 'true');
-                updateLikeButtonDisplay(likeButton, likeCountElement);
             }
+            updateLikeButtonDisplay(likeButton);
         } catch (error) {
             console.error('Error in checkUserLiked:', error);
         }
     }
 
     // Update button display based on like status
-    function updateLikeButtonDisplay(likeButton, likeCountElement) {
+    function updateLikeButtonDisplay(likeButton) {
         const isLiked = likeButton.classList.contains('liked');
-        const likeText = likeButton.querySelector('.like-text');
-        const likeIcon = likeButton.querySelector('.like-icon');
+        const likeText = likeButton.querySelector('.like-button-text');
+        const likeIcon = likeButton.querySelector('.like-button-icon');
         
         if (isLiked) {
-            // Show emoji + count (hide "Like" text)
-            if (likeText) likeText.style.display = 'none';
-            if (likeIcon) likeIcon.style.display = 'inline';
-            if (likeCountElement) likeCountElement.style.display = 'inline';
+            if (likeText) likeText.textContent = 'Liked';
+            if (likeIcon) likeIcon.textContent = '❤️';
         } else {
-            // Show emoji + "Like" text (hide count)
-            if (likeText) likeText.style.display = 'inline';
-            if (likeIcon) likeIcon.style.display = 'inline';
-            if (likeCountElement) likeCountElement.style.display = 'none';
+            if (likeText) likeText.textContent = 'Like';
+            if (likeIcon) likeIcon.textContent = '♡';
         }
     }
 
@@ -185,7 +163,7 @@
 
                 likeButton.classList.remove('liked');
                 likeButton.setAttribute('aria-pressed', 'false');
-                updateLikeButtonDisplay(likeButton, likeCountElement);
+                updateLikeButtonDisplay(likeButton);
             } else {
                 // Like: Add the like
                 const { error } = await client
@@ -202,7 +180,7 @@
                     if (error.code === '23505') {
                         likeButton.classList.add('liked');
                         likeButton.setAttribute('aria-pressed', 'true');
-                        updateLikeButtonDisplay(likeButton, likeCountElement);
+                        updateLikeButtonDisplay(likeButton);
                     } else {
                         alert('Unable to like. Please try again.');
                     }
@@ -211,7 +189,7 @@
 
                 likeButton.classList.add('liked');
                 likeButton.setAttribute('aria-pressed', 'true');
-                updateLikeButtonDisplay(likeButton, likeCountElement);
+                updateLikeButtonDisplay(likeButton);
             }
 
             // Update like count

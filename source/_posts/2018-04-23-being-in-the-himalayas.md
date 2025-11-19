@@ -5,7 +5,7 @@ cover:  assets/images/being-in-the-himalayas-2.jpg
 navigation: True
 title: Being in the Himalayas
 date: 2018-04-23 08:00:00
-tags: [Travel, Thoughts]
+tags: [travel, reflections]
 class: post-template
 subclass: 'post'
 author: kesha

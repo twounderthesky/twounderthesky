@@ -1,9 +1,12 @@
 <!-- Likes Section -->
 <section class="post-likes-section">
+    <div class="like-count-display">
+        <span class="like-count-icon">❤️</span>
+        <span id="like-count" class="like-count-number">0</span>
+    </div>
     <button id="like-button" class="like-button" data-post-slug="{{ page.url | remove_first: '/' | replace: '/', '-' | replace: '.html', '' }}" aria-label="Like this post" aria-pressed="false">
-        <span class="like-icon">❤️</span>
-        <span class="like-text">Like</span>
-        <span id="like-count" class="like-count" style="display: none;">0</span>
+        <span class="like-button-icon">♡</span>
+        <span class="like-button-text">Like</span>
     </button>
 </section>
 
@@ -16,59 +19,54 @@
     text-align: center;
 }
 
+.like-count-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-size: 20px;
+    color: #15171a;
+}
+
+.like-count-icon {
+    font-size: 22px;
+}
+
+.like-count-number {
+    font-weight: 600;
+}
+
 .like-button {
-    background: transparent;
+    background: #f5f9ff;
     border: 2px solid #3eb0ef;
-    color: #3eb0ef;
-    padding: 10px 20px;
-    border-radius: 25px;
+    color: #1f76b5;
+    padding: 10px 28px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.3s ease;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.2s ease, box-shadow 0.2s;
+    box-shadow: 0 6px 14px rgba(31, 118, 181, 0.15);
 }
 
 .like-button:hover {
     background: #3eb0ef;
-    color: white;
-    transform: scale(1.05);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(62, 176, 239, 0.35);
 }
 
 .like-button.liked {
     background: #3eb0ef;
-    color: white;
+    color: #fff;
     border-color: #3eb0ef;
 }
 
-.like-button.liked .like-text {
-    display: none;
-}
-
-.like-button.liked .like-icon {
-    animation: heartBeat 0.5s ease;
-}
-
-.like-button.liked .like-count {
-    display: inline !important;
-    margin-left: 5px;
-}
-
-@keyframes heartBeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-}
-
-.like-icon {
+.like-button-icon {
     font-size: 18px;
-}
-
-.like-count {
-    margin-left: 5px;
-    color: inherit;
-    font-size: 16px;
-    font-weight: 500;
 }
 </style>
 
