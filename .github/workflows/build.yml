@@ -2,7 +2,8 @@ name: Build and Deploy Jekyll Site
 
 on:
   push:
-    branches: [ source, kesha ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -46,10 +47,5 @@ jobs:
         working-directory: ./source
         run: bundle exec jekyll build -d ../docs
       
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          cname: false
+      # Deployment step removed; Pages will use docs/ committed to main
 
