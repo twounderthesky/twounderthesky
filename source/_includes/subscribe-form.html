@@ -2,7 +2,77 @@
     <div class="form-group">
         <input class="subscribe-email" type="email" name="email" placeholder="{{ include.placeholder | default: 'youremail@example.com' }}" required />
     </div>
-    <button class="" type="submit" {% unless site.subscribers %}disabled{% endunless %}>
+    <button class="subscribe-button" type="submit" {% unless site.subscribers %}disabled{% endunless %}>
         <span>Subscribe</span>
     </button>
 </form>
+
+<style>
+.mailchimp-subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.mailchimp-subscribe-form .form-group {
+    margin: 0;
+}
+
+.mailchimp-subscribe-form .subscribe-email {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #d2dce7;
+    border-radius: 30px;
+    font-size: 16px;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.mailchimp-subscribe-form .subscribe-email:focus {
+    outline: none;
+    border-color: #3eb0ef;
+    box-shadow: 0 0 0 3px rgba(62, 176, 239, 0.2);
+}
+
+.mailchimp-subscribe-form .subscribe-button {
+    height: 48px;
+    padding: 0 28px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #3eb0ef, #1f76b5);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(31, 118, 181, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.mailchimp-subscribe-form .subscribe-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 20px rgba(31, 118, 181, 0.25);
+}
+
+.mailchimp-subscribe-form .subscribe-button:disabled {
+    background: #c7d7e6;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+@media (min-width: 600px) {
+    .mailchimp-subscribe-form {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .mailchimp-subscribe-form .form-group,
+    .mailchimp-subscribe-form .subscribe-email {
+        flex: 1;
+    }
+}
+</style>
