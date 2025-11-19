@@ -20,11 +20,21 @@ CNAME: twounderthesky.com
 
 # Social info
 navigation: True # show the navbar links
-subscribers: False # you need to connect an external service for this to work,
+subscribers: true # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 twitter: False # replace by your username
 instagram: 2underthesky
+
+
+# Supabase Configuration (for likes, comments, and page views)
+# ⚠️ DO NOT commit real values! Use GitHub Secrets or _config_secrets.yml
+supabase_url: YOUR_SUPABASE_URL_HERE
+supabase_anon_key: YOUR_SUPABASE_ANON_KEY_HERE
+
+# Mailchimp Configuration (for email subscriptions)
+# ⚠️ DO NOT commit real values! Use GitHub Secrets or _config_secrets.yml
+mailchimp_url: YOUR_MAILCHIMP_FORM_URL_HERE
 
 # Disqus
 disqus: False
