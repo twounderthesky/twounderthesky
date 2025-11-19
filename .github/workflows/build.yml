@@ -6,13 +6,22 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -32,7 +41,6 @@ jobs:
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           MAILCHIMP_URL: ${{ secrets.MAILCHIMP_URL }}
         run: |
-          # Replace placeholders in _config.yml with secrets
           if [ -n "$SUPABASE_URL" ]; then
             sed -i "s|YOUR_SUPABASE_URL_HERE|$SUPABASE_URL|g" _config.yml
           fi
@@ -45,7 +53,23 @@ jobs:
       
       - name: Build Jekyll site
         working-directory: ./source
-        run: bundle exec jekyll build -d ../docs
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build -d ../_site
       
-      # Deployment step removed; Pages will use docs/ committed to main
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
