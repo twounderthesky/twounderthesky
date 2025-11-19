@@ -1,0 +1,51 @@
+name: Build and Deploy Jekyll Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          working-directory: ./source
+      
+      - name: Install dependencies
+        working-directory: ./source
+        run: bundle install
+      
+      - name: Configure Jekyll with secrets
+        working-directory: ./source
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          MAILCHIMP_URL: ${{ secrets.MAILCHIMP_URL }}
+        run: |
+          # Replace placeholders in _config.yml with secrets
+          if [ -n "$SUPABASE_URL" ]; then
+            sed -i "s|YOUR_SUPABASE_URL_HERE|$SUPABASE_URL|g" _config.yml
+          fi
+          if [ -n "$SUPABASE_ANON_KEY" ]; then
+            sed -i "s|YOUR_SUPABASE_ANON_KEY_HERE|$SUPABASE_ANON_KEY|g" _config.yml
+          fi
+          if [ -n "$MAILCHIMP_URL" ]; then
+            sed -i "s|YOUR_MAILCHIMP_FORM_URL_HERE|$MAILCHIMP_URL|g" _config.yml
+          fi
+      
+      - name: Build Jekyll site
+        working-directory: ./source
+        run: bundle exec jekyll build -d ../docs
+      
+      # Deployment step removed; Pages will use docs/ committed to main
+

@@ -1,0 +1,20 @@
+<!-- View Count Display -->
+<span class="view-count">
+    <span class="view-icon">👁️</span>
+    <span id="view-count" data-post-slug="{{ page.url | remove_first: '/' | replace: '/', '-' | replace: '.html', '' }}">-</span> views
+</span>
+
+<style>
+.view-count {
+    color: #666;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-icon {
+    font-size: 16px;
+}
+</style>
+

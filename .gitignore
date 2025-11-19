@@ -1,0 +1,50 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata/
+vendor/
+.bundle/
+
+# Environment and secrets
+_config_secrets.yml
+.env
+*.log
+
+# Guide files (don't commit)
+FEATURE_RECOMMENDATIONS.md
+SETUP_GUIDE.md
+QUICK_START.md
+NEXT_STEPS.md
+DEPLOYMENT_STEPS.md
+SUPABASE_SETUP_STEPS.md
+MAILCHIMP_URL_GUIDE.md
+LOCAL_TESTING.md
+LOCAL_TESTING_GUIDE.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+Gemfile.lock
+
+# Temporary files
+*.tmp
+*.bak
+

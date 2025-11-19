@@ -126,6 +126,8 @@ into the {body} of the default.hbs template -->
             
         </div>
         
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
     </div>
 </nav>
 
@@ -223,8 +225,271 @@ After getting a job: learning new things, building good professional relationshi
 
             </section>
 
+            <!-- Likes Section -->
+            <!-- Likes Section -->
+<section class="post-likes-section">
+    <button id="like-button" class="like-button" data-post-slug="reflections-after-i-left-my-job" aria-label="Like this post" aria-pressed="false">
+        <span class="like-icon">❤️</span>
+        <span class="like-text">Like</span>
+        <span id="like-count" class="like-count" style="display: none;">0</span>
+    </button>
+</section>
+
+<style>
+.post-likes-section {
+    margin: 30px 0;
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.like-button {
+    background: transparent;
+    border: 2px solid #3eb0ef;
+    color: #3eb0ef;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like-button:hover {
+    background: #3eb0ef;
+    color: white;
+    transform: scale(1.05);
+}
+
+.like-button.liked {
+    background: #3eb0ef;
+    color: white;
+    border-color: #3eb0ef;
+}
+
+.like-button.liked .like-text {
+    display: none;
+}
+
+.like-button.liked .like-icon {
+    animation: heartBeat 0.5s ease;
+}
+
+.like-button.liked .like-count {
+    display: inline !important;
+    margin-left: 5px;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+.like-icon {
+    font-size: 18px;
+}
+
+.like-count {
+    margin-left: 5px;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 500;
+}
+</style>
+
+
+
+            <!-- Comments Section -->
+            <!-- Comments Section -->
+<section class="post-comments-section">
+    <h3 class="comments-title">Comments</h3>
+    
+    <div id="comments-container" class="comments-container">
+        <p class="loading-comments">Loading comments...</p>
+    </div>
+
+    <form id="comment-form" class="comment-form" data-post-slug="reflections-after-i-left-my-job">
+        <h4 class="comment-form-title">Leave a Comment</h4>
+        <div class="form-group">
+            <label for="comment-name">Name (optional)</label>
+            <input type="text" id="comment-name" name="name" class="comment-input" placeholder="Your name">
+        </div>
+        <div class="form-group">
+            <label for="comment-text">Comment *</label>
+            <textarea id="comment-text" name="comment" class="comment-textarea" rows="5" required placeholder="Write your comment here..."></textarea>
+        </div>
+        <button type="submit" class="comment-submit">Post Comment</button>
+    </form>
+</section>
+
+<style>
+.post-comments-section {
+    margin: 40px 0;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.comments-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #15171a;
+}
+
+.comments-container {
+    margin-bottom: 40px;
+    min-height: 50px;
+}
+
+.loading-comments {
+    color: #666;
+    font-style: italic;
+}
+
+.no-comments {
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.comment-item {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #3eb0ef;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.comment-author {
+    color: #15171a;
+    font-size: 16px;
+}
+
+.comment-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.comment-body {
+    color: #15171a;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.comment-form {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.comment-form-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #15171a;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #15171a;
+    font-weight: 500;
+}
+
+.comment-input,
+.comment-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.comment-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.comment-input:focus,
+.comment-textarea:focus {
+    outline: none;
+    border-color: #3eb0ef;
+    box-shadow: 0 0 0 3px rgba(62, 176, 239, 0.1);
+}
+
+.comment-submit {
+    background: #3eb0ef;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comment-submit:hover {
+    background: #2a9dd8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(62, 176, 239, 0.3);
+}
+
+.comment-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+
+
+
             <!-- Email subscribe form at the bottom of the page -->
             
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Two Under The Sky</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" class="mailchimp-subscribe-form" data-mailchimp-url="YOUR_MAILCHIMP_FORM_URL_HERE">
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email" placeholder="youremail@example.com" required />
+    </div>
+    <button class="" type="submit" >
+        <span>Subscribe</span>
+    </button>
+</form>
+
+                </section>
+            
+
 
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->
@@ -387,23 +652,48 @@ After getting a job: learning new things, building good professional relationshi
 
     <!-- The big email subscribe modal content -->
     
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/twounderthesky/assets/images/blog-icon.png" alt="Two Under The Sky" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Two Under The Sky</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" class="mailchimp-subscribe-form" data-mailchimp-url="YOUR_MAILCHIMP_FORM_URL_HERE">
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email" placeholder="youremail@example.com" required />
+    </div>
+    <button class="" type="submit" >
+        <span>Subscribe</span>
+    </button>
+</form>
 
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });</script>
+            </div>
+        </div>
+    
 
-    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <!-- jQuery - Load first as other scripts depend on it -->
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    
+    <!-- highlight.js for code syntax highlighting -->
+    <!-- Note: highlight.js should be loaded elsewhere if needed -->
+    <script>
+    $(document).ready(function() {
+      if (typeof hljs !== 'undefined') {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      }
+    });
+    </script>
+
+    <!-- Fitvids, which makes all video embeds responsive -->
     <script type="text/javascript" src="/twounderthesky/assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
 
 
     <!-- Paginator increased to "infinit" in _config.yml -->
@@ -431,8 +721,30 @@ After getting a job: learning new things, building good professional relationshi
  </script>
 
 
-    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    <!-- Supabase and Feature Scripts -->
+    <!-- IMPORTANT: Set config BEFORE loading supabase-client.js -->
+    <script>
+        // Inject Supabase configuration from site config
+        window.SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';
+        window.SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+        window.MAILCHIMP_URL = 'YOUR_MAILCHIMP_FORM_URL_HERE';
+        console.log('Config injected:', {
+            url: window.SUPABASE_URL ? 'Set' : 'Missing',
+            key: window.SUPABASE_ANON_KEY ? 'Set' : 'Missing'
+        });
+    </script>
+    <script type="text/javascript" src="/twounderthesky/assets/js/supabase-client.js"></script>
     
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    <!-- Always load these scripts - they check for elements before running -->
+    <script type="text/javascript" src="/twounderthesky/assets/js/likes.js"></script>
+    <script type="text/javascript" src="/twounderthesky/assets/js/comments.js"></script>
+    <script type="text/javascript" src="/twounderthesky/assets/js/page-views.js"></script>
+    
+    
+    
+    <!-- Mailchimp subscription script (load on all pages) -->
+    <script type="text/javascript" src="/twounderthesky/assets/js/mailchimp.js"></script>
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
     <!-- ghost_foot -->

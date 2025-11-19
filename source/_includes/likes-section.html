@@ -1,0 +1,74 @@
+<!-- Likes Section -->
+<section class="post-likes-section">
+    <button id="like-button" class="like-button" data-post-slug="{{ page.url | remove_first: '/' | replace: '/', '-' | replace: '.html', '' }}" aria-label="Like this post" aria-pressed="false">
+        <span class="like-icon">❤️</span>
+        <span class="like-text">Like</span>
+        <span id="like-count" class="like-count" style="display: none;">0</span>
+    </button>
+</section>
+
+<style>
+.post-likes-section {
+    margin: 30px 0;
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.like-button {
+    background: transparent;
+    border: 2px solid #3eb0ef;
+    color: #3eb0ef;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like-button:hover {
+    background: #3eb0ef;
+    color: white;
+    transform: scale(1.05);
+}
+
+.like-button.liked {
+    background: #3eb0ef;
+    color: white;
+    border-color: #3eb0ef;
+}
+
+.like-button.liked .like-text {
+    display: none;
+}
+
+.like-button.liked .like-icon {
+    animation: heartBeat 0.5s ease;
+}
+
+.like-button.liked .like-count {
+    display: inline !important;
+    margin-left: 5px;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+.like-icon {
+    font-size: 18px;
+}
+
+.like-count {
+    margin-left: 5px;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 500;
+}
+</style>
+

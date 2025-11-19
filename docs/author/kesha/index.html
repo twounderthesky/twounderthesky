@@ -133,6 +133,8 @@
             
         </div>
         
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
     </div>
 </nav>
 
@@ -310,23 +312,48 @@
 
     <!-- The big email subscribe modal content -->
     
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/twounderthesky/assets/images/blog-icon.png" alt="Two Under The Sky" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Two Under The Sky</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" class="mailchimp-subscribe-form" data-mailchimp-url="YOUR_MAILCHIMP_FORM_URL_HERE">
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email" placeholder="youremail@example.com" required />
+    </div>
+    <button class="" type="submit" >
+        <span>Subscribe</span>
+    </button>
+</form>
 
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });</script>
+            </div>
+        </div>
+    
 
-    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <!-- jQuery - Load first as other scripts depend on it -->
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    
+    <!-- highlight.js for code syntax highlighting -->
+    <!-- Note: highlight.js should be loaded elsewhere if needed -->
+    <script>
+    $(document).ready(function() {
+      if (typeof hljs !== 'undefined') {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      }
+    });
+    </script>
+
+    <!-- Fitvids, which makes all video embeds responsive -->
     <script type="text/javascript" src="/twounderthesky/assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
 
 
     <!-- Paginator increased to "infinit" in _config.yml -->
@@ -354,8 +381,30 @@
  </script>
 
 
-    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    <!-- Supabase and Feature Scripts -->
+    <!-- IMPORTANT: Set config BEFORE loading supabase-client.js -->
+    <script>
+        // Inject Supabase configuration from site config
+        window.SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';
+        window.SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+        window.MAILCHIMP_URL = 'YOUR_MAILCHIMP_FORM_URL_HERE';
+        console.log('Config injected:', {
+            url: window.SUPABASE_URL ? 'Set' : 'Missing',
+            key: window.SUPABASE_ANON_KEY ? 'Set' : 'Missing'
+        });
+    </script>
+    <script type="text/javascript" src="/twounderthesky/assets/js/supabase-client.js"></script>
     
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    <!-- Always load these scripts - they check for elements before running -->
+    <script type="text/javascript" src="/twounderthesky/assets/js/likes.js"></script>
+    <script type="text/javascript" src="/twounderthesky/assets/js/comments.js"></script>
+    <script type="text/javascript" src="/twounderthesky/assets/js/page-views.js"></script>
+    
+    
+    
+    <!-- Mailchimp subscription script (load on all pages) -->
+    <script type="text/javascript" src="/twounderthesky/assets/js/mailchimp.js"></script>
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
     <!-- ghost_foot -->
