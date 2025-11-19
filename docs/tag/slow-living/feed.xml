@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
-  <link href="https://twounderthesky.github.io/twounderthesky/tag/slow-living/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://twounderthesky.github.io/twounderthesky/" rel="alternate" type="text/html" />
-  <updated>2025-11-19T12:24:12+05:30</updated>
-  <id>https://twounderthesky.github.io/twounderthesky/tag/slow-living/feed.xml</id>
+  <link href="http://localhost:4000/twounderthesky/tag/slow-living/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/twounderthesky/" rel="alternate" type="text/html" />
+  <updated>2025-11-19T12:30:23+05:30</updated>
+  <id>http://localhost:4000/twounderthesky/tag/slow-living/feed.xml</id>
 
   
   
@@ -37,11 +37,11 @@
   
     <entry>
       <title type="html">Reflections After I Left My Job</title>
-      <link href="https://twounderthesky.github.io/twounderthesky/reflections-after-i-left-my-job" rel="alternate" type="text/html" title="Reflections After I Left My Job" />
+      <link href="http://localhost:4000/twounderthesky/reflections-after-i-left-my-job" rel="alternate" type="text/html" title="Reflections After I Left My Job" />
       <published>2025-11-13T00:00:00+05:30</published>
       <updated>2025-11-13T00:00:00+05:30</updated>
-      <id>https://twounderthesky.github.io/twounderthesky/reflections-after-i-left-my-job</id>
-      <content type="html" xml:base="https://twounderthesky.github.io/twounderthesky/reflections-after-i-left-my-job">&lt;p&gt;I left my job in April 2025, and it’s been around six to seven months that I’ve been a free bird! This is not the first time I’ve taken a career break, but it is the first time I have no goal, no next steps, no future plans.&lt;/p&gt;
+      <id>http://localhost:4000/twounderthesky/reflections-after-i-left-my-job</id>
+      <content type="html" xml:base="http://localhost:4000/twounderthesky/reflections-after-i-left-my-job">&lt;p&gt;I left my job in April 2025, and it’s been around six to seven months that I’ve been a free bird! This is not the first time I’ve taken a career break, but it is the first time I have no goal, no next steps, no future plans.&lt;/p&gt;
 
 &lt;p&gt;Have you ever had a time when you weren’t looking ahead into the future and were just living in the present? When your mind is calm, your health is good, and you suddenly have so much time in your hands to figure out who you are? I feel like since eighth or ninth standard, my life has been pretty hectic. Not always physically busy, but mentally busy - always thinking about what’s next.&lt;/p&gt;
 
