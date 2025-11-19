@@ -48,7 +48,8 @@ jobs:
             sed -i "s|YOUR_SUPABASE_ANON_KEY_HERE|$SUPABASE_ANON_KEY|g" _config.yml
           fi
           if [ -n "$MAILCHIMP_URL" ]; then
-            sed -i "s|YOUR_MAILCHIMP_FORM_URL_HERE|$MAILCHIMP_URL|g" _config.yml
+            MAILCHIMP_ESCAPED=$(printf '%s' "$MAILCHIMP_URL" | sed -e 's/[\/&]/\\&/g')
+            sed -i "s|YOUR_MAILCHIMP_FORM_URL_HERE|$MAILCHIMP_ESCAPED|g" _config.yml
           fi
       
       - name: Build Jekyll site

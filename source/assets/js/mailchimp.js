@@ -91,7 +91,7 @@
                     emailInput.value = '';
                     if (nameInput) nameInput.value = '';
                     // Show success message
-                    showMessage(form, 'Thank you for subscribing! Please check your email to confirm.', 'success');
+                    showMessage(form, 'Thank you for subscribing!', 'success');
                 } else {
                     showMessage(form, data.msg || 'Unable to subscribe. Please try again later.', 'error');
                 }
@@ -144,6 +144,80 @@
         setTimeout(function() {
             messageEl.remove();
         }, 5000);
+
+        if (type === 'success') {
+            autoCloseSubscribeOverlay(form);
+            showSuccessToast(message);
+        }
+    }
+
+    function autoCloseSubscribeOverlay(form) {
+        if (!form || typeof form.closest !== 'function') return;
+
+        const overlay = form.closest('#subscribe');
+        if (!overlay) return;
+
+        setTimeout(function() {
+            const closeTrigger = overlay.querySelector('.subscribe-overlay-close');
+            if (closeTrigger && typeof closeTrigger.click === 'function') {
+                closeTrigger.click();
+                return;
+            }
+
+            if (window.location.hash === '#subscribe') {
+                if (history.replaceState) {
+                    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+                } else {
+                    window.location.hash = '';
+                }
+            }
+        }, 1500);
+    }
+
+    function showSuccessToast(message) {
+        const toastId = 'subscription-success-toast';
+        let toast = document.getElementById(toastId);
+
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = toastId;
+            toast.className = 'subscription-toast';
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 24px;
+                right: 24px;
+                z-index: 9999;
+                background: rgba(30, 41, 59, 0.95);
+                color: #fff;
+                padding: 14px 18px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+                font-size: 15px;
+                line-height: 1.4;
+                max-width: 320px;
+                opacity: 0;
+                transform: translateY(15px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            `;
+            document.body.appendChild(toast);
+        }
+
+        toast.textContent = message;
+        requestAnimationFrame(function() {
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateY(0)';
+        });
+
+        clearTimeout(toast.hideTimeout);
+        toast.hideTimeout = setTimeout(function() {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(15px)';
+            setTimeout(function() {
+                if (toast && toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 300);
+        }, 4000);
     }
 })();
 

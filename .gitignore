@@ -12,17 +12,6 @@ _config_secrets.yml
 .env
 *.log
 
-# Guide files (don't commit)
-FEATURE_RECOMMENDATIONS.md
-SETUP_GUIDE.md
-QUICK_START.md
-NEXT_STEPS.md
-DEPLOYMENT_STEPS.md
-SUPABASE_SETUP_STEPS.md
-MAILCHIMP_URL_GUIDE.md
-LOCAL_TESTING.md
-LOCAL_TESTING_GUIDE.md
-
 # OS
 .DS_Store
 Thumbs.db
