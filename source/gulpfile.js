@@ -14,21 +14,18 @@ var cssnano = require('cssnano');
 var customProperties = require('postcss-custom-properties');
 var easyimport = require('postcss-easy-import');
 
-var swallowError = function swallowError(error) {
+function swallowError(error) {
     gutil.log(error.toString());
     gutil.beep();
     this.emit('end');
-};
+}
 
-var nodemonServerInit = function () {
+function nodemonServerInit(done) {
     livereload.listen(1234);
-};
+    done();
+}
 
-gulp.task('build', ['css'], function (/* cb */) {
-    return nodemonServerInit();
-});
-
-gulp.task('css', function () {
+function cssTask() {
     var processors = [
         easyimport,
         customProperties,
@@ -44,13 +41,13 @@ gulp.task('css', function () {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('assets/built/'))
         .pipe(livereload());
-});
+}
 
-gulp.task('watch', function () {
-    gulp.watch('assets/css/**', ['css']);
-});
+function watchTask() {
+    return gulp.watch('assets/css/**', cssTask);
+}
 
-gulp.task('zip', ['css'], function() {
+function zipTask() {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
@@ -62,8 +59,12 @@ gulp.task('zip', ['css'], function() {
     ])
         .pipe(zip(filename))
         .pipe(gulp.dest(targetDir));
-});
+}
 
-gulp.task('default', ['build'], function () {
-    gulp.start('watch');
-});
+var build = gulp.series(cssTask, nodemonServerInit);
+
+gulp.task('css', cssTask);
+gulp.task('watch', watchTask);
+gulp.task('build', build);
+gulp.task('zip', gulp.series(cssTask, zipTask));
+gulp.task('default', gulp.series(build, watchTask));
