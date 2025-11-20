@@ -6,6 +6,7 @@ navigation: True
 title: Being in the Himalayas
 date: 2018-04-23 08:00:00
 tags: [travel, reflections]
+excerpt: My trek to the Himalayas showed me how small my problems really are. The mountains, silence, and peoplewho live and work there taught me what strength and life truly mean.
 class: post-template
 subclass: 'post'
 author: kesha

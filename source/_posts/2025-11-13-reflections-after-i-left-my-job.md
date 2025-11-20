@@ -6,6 +6,10 @@ date: 2025-11-13
 cover: assets/images/reflection-2.jpg
 tags: [personal, reflections]
 excerpt: What I am learning from my first goal-free career break and the space it has created for self-discovery.
+navigation: True
+class: post-template
+subclass: 'post'
+
 ---
 
 I left my job in April 2025, and it’s been around six to seven months that I’ve been a free bird! This is not the first time I’ve taken a career break, but it is the first time I have no goal, no next steps, no future plans.

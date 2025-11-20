@@ -10,7 +10,7 @@ subclass: 'post page'
 
 We (Kesha & Akshat) are a crazy couple who love to travel! Most of our travel includes exploring offbeat places where you can just be in the lap of nature's serenity and beauty.
 
-Currently, we are based out of Bangalore and both of us work in the IT industry. This gives us the flexibility to travel at our own pace.
+Currently, we are based out of Bangalore,India and both of us work in the IT industry. This gives us the flexibility to travel at our own pace.
 
 This blog is our way to document and share our journeys - from travel adventures and random explorations to cooking experiments, professional break experiences, spirituality, and everything else that shapes our lives. We write about what moves us, what we learn, and what we want to remember.
 
