@@ -16,7 +16,7 @@ This blog is our way to document and share our journeys - from travel adventures
 
 ### About Kesha!
 
-<img src="{{ site.baseurl }}assets/images/kesha-solo-4.jpg" alt="Kesha" width="60%">
+<img src="{{ site.baseurl }}assets/images/kesha-solo-3.jpg" alt="Kesha" width="60%">
 
 I am this crazy weird person who loves to go to random hills, rivers, lakes, beaches (basically any quiet natural location) and climb trees I see along the way. If I come across a waterfall, I have to jump and take a dip! Trespassing through beautiful landscapes and not getting caught is my secret superpower (that's why I love India!)
 
