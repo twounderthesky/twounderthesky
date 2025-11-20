@@ -62,9 +62,19 @@
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
-                <nav class="site-footer-nav">
-                    <a href="{{ site.baseurl }}">Latest Posts</a>
-                </nav>
+                <div class="site-footer-links">
+                    <div class="social-links footer-social-links">
+                        {% if site.instagram %}
+                            <a class="social-link social-link-tw" href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">{% include instagram.html %}</a>
+                        {% endif %}
+                        <a class="social-link social-link-mail" href="mailto:2undertheskies@gmail.com" aria-label="Email">
+                            {% include email-icon.html %}
+                        </a>
+                    </div>
+                    {% if site.subscribers %}
+                        <a class="subscribe-button subscribe-button-footer" href="#subscribe">Subscribe</a>
+                    {% endif %}
+                </div>
             </div>
         </footer>
 

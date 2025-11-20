@@ -360,6 +360,23 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     .site-nav-right {
         display: none;
     }
+    .home-template .site-nav {
+        position: relative;
+    }
+    .home-template .site-nav-left {
+        padding-right: 90px;
+        width: 100%;
+    }
+    .home-template .site-nav-right {
+        position: absolute;
+        top: 12px;
+        right: 4vw;
+        display: flex;
+        height: auto;
+    }
+    .home-template .social-links a:last-of-type {
+        padding-right: 10px;
+    }
 }
 
 
@@ -1912,11 +1929,25 @@ Usage (In Ghost editor):
     display: none;
 }
 
+.site-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-social-links {
+    display: flex;
+}
+
+.subscribe-button-footer {
+    padding: 6px 14px;
+}
+
 @media (max-width: 650px) {
     .site-footer-content {
         flex-direction: column;
     }
-    .site-footer-nav a:first-child {
-        margin-left: 0;
+    .site-footer-links {
+        margin-top: 15px;
     }
 }

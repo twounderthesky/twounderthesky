@@ -18,6 +18,11 @@ author: kesha
 
 <p>When you start the trek, you see a lot of vegetation around you, beautiful greenery and a very live atmosphere with many domestic animals, people, beautiful colourful flowers. You want to just stop and fill your eyes with all the beauties. After you start climbing to higher altitudes, vegetation decreases and you reach one point where you can't find even a single leaf!</p>
 
+<figure class="kg-card kg-image-card">
+    <img src="{{ site.baseurl }}assets/images/being-in-the-himalayas.jpg" alt="Panoramic Himalayan landscape" style="max-width: 80%; display: block; margin: 0 auto;">
+    <figcaption style="text-align: center; font-size: 1rem; font-weight: 500;">Cold and Windy Himalayas!</figcaption>
+</figure>
+
 <p>Mountains are cold, lonely and windy. You look around and all you see is snow covered mountains with clouds and chilly wind. There is a deadly silence all around you. All you hear is the wind roaring or rocks falling from the mountains. No other sound at all! Are the views beautiful? Of course! It is breathtaking! Literally Breathtaking! Many times you just want to sit there forever.</p>
 
 <p>This is where you think about yourself, your family, your loved ones. Looking at the snowy and lifeless mountains, makes you feel great just being alive! You want to do things which makes an impact in the society, you want to do something good. All of your problems in life seem tiny just by looking at mighty Himalayas. You are breathing and you are fine, that’s all that matters.</p>
