@@ -1,22 +1,45 @@
 <!-- Likes Section -->
-<section class="post-likes-section">
-    <div class="like-count-display">
-        <span class="like-count-icon">❤️</span>
-        <span id="like-count" class="like-count-number">0</span>
+<section class="post-likes-section" aria-label="Post likes and sharing">
+    <div class="post-likes-content">
+        <div class="like-count-display" role="status" aria-live="polite">
+            <span class="like-count-icon" aria-hidden="true">❤️</span>
+            <span id="like-count" class="like-count-number">0</span>
+            <span class="like-count-label">people liked this</span>
+        </div>
+        <div class="post-likes-actions">
+            <button id="like-button" class="like-button" data-post-slug="{{ page.url | remove_first: '/' | replace: '/', '-' | replace: '.html', '' }}" aria-label="Like this post" aria-pressed="false">
+                <span class="like-button-icon" aria-hidden="true">♡</span>
+                <span class="like-button-text">Like</span>
+            </button>
+            <button id="share-button" class="share-button" type="button" aria-label="Share this post" data-share-url="{{ site.url }}{{ site.baseurl }}{{ page.url | remove_first: '/' }}">
+                <span class="share-button-icon" aria-hidden="true">🔗</span>
+                <span class="share-button-text">Share</span>
+            </button>
+        </div>
+        <p id="share-feedback" class="share-feedback" role="status" aria-live="polite"></p>
     </div>
-    <button id="like-button" class="like-button" data-post-slug="{{ page.url | remove_first: '/' | replace: '/', '-' | replace: '.html', '' }}" aria-label="Like this post" aria-pressed="false">
-        <span class="like-button-icon">♡</span>
-        <span class="like-button-text">Like</span>
-    </button>
 </section>
 
 <style>
 .post-likes-section {
     margin: 30px 0;
-    padding: 20px 0;
+    padding: 24px 0 20px;
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
     text-align: center;
+}
+
+.post-likes-content {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.post-likes-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
 .like-count-display {
@@ -24,13 +47,18 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     font-size: 20px;
     color: #15171a;
 }
 
 .like-count-icon {
     font-size: 22px;
+}
+
+.like-count-label {
+    font-size: 14px;
+    color: #6c7781;
 }
 
 .like-count-number {
@@ -67,6 +95,64 @@
 
 .like-button-icon {
     font-size: 18px;
+}
+
+.share-button {
+    background: #edf9ff;
+    border: 2px solid #30b0c7;
+    color: #0c6f85;
+    padding: 10px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease, box-shadow 0.2s;
+    box-shadow: 0 6px 14px rgba(201, 24, 74, 0.15);
+}
+
+.share-button:hover,
+.share-button:focus {
+    background: #30b0c7;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(48, 176, 199, 0.35);
+}
+
+.share-button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.share-button-working {
+    pointer-events: none;
+}
+
+.share-button-icon {
+    font-size: 18px;
+}
+
+.share-feedback {
+    margin-top: 16px;
+    font-size: 14px;
+    min-height: 18px;
+    color: #6c7781;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
+
+.share-feedback.visible {
+    opacity: 1;
+}
+
+.share-feedback[data-state="success"] {
+    color: #0a7d49;
+}
+
+.share-feedback[data-state="error"] {
+    color: #b10035;
 }
 </style>
 
