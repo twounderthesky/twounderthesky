@@ -70,10 +70,11 @@
                         <a class="social-link social-link-mail" href="mailto:2undertheskies@gmail.com" aria-label="Email">
                             {% include email-icon.html %}
                         </a>
-                    </div>
-                    {% if site.subscribers %}
+                        {% if site.subscribers %}
                         <a class="subscribe-button subscribe-button-footer" href="#subscribe">Subscribe</a>
                     {% endif %}
+                    </div>
+
                 </div>
             </div>
         </footer>
@@ -156,6 +157,7 @@
     <script type="text/javascript" src="{{ site.baseurl }}assets/js/likes.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}assets/js/comments.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}assets/js/page-views.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/share.js"></script>
     
     {% if page.class == "post-template" or page.class.class == "post-template" %}
         {% include post-scripts.html %}
