@@ -1059,8 +1059,7 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .subscribe-form {
-    margin: 1.5em 0;
-    padding: 6.5vw 7vw 7vw;
+    padding: 1vw 1vw 1vw;
     border: color(var(--whitegrey) l(+2%)) 1px solid;
     text-align: center;
     background: color(var(--whitegrey) l(+4%));
@@ -1068,20 +1067,11 @@ Usage (In Ghost editor):
 }
 
 .subscribe-form-title {
-    margin: 0 0 3px 0;
-    padding: 0;
+    margin: 0 0 20px 0;
     color: var(--darkgrey);
-    font-size: 3.5rem;
-    line-height: 1;
-    font-weight: 700;
-}
-
-.subscribe-form p {
-    margin-bottom: 1em;
-    color: var(--midgrey);
     font-size: 2.2rem;
-    line-height: 1.55em;
-    letter-spacing: 0.2px;
+    line-height: 1;
+    font-weight: 600;
 }
 
 .subscribe-form form {
@@ -1156,6 +1146,10 @@ Usage (In Ghost editor):
 }
 
 @media (max-width: 500px) {
+    .subscribe-form {
+        padding: 18px 18px 14px;
+        margin-bottom: 24px;
+    }
     .subscribe-form form {
         flex-direction: column;
     }
@@ -1163,8 +1157,12 @@ Usage (In Ghost editor):
         width: 100%;
     }
     .subscribe-form button {
-        margin: 10px 0 0 0;
-        width: 100%;
+        margin: 8px auto 0;
+        padding: 0 16px;
+        width: auto;
+        height: 34px;
+        line-height: 30px;
+        font-size: 1.4rem;
     }
 }
 
