@@ -19,7 +19,7 @@
         var defaultUrl = shareButton.getAttribute('data-share-url') || window.location.href.split('#')[0];
         var pageTitle = document.querySelector('.post-full-title');
         var shareTitle = shareButton.getAttribute('data-share-title') || (pageTitle ? pageTitle.textContent.trim() : document.title);
-        var shareText = shareButton.getAttribute('data-share-text') || 'Thought you might enjoy this post.';
+        var shareText = shareButton.getAttribute('data-share-text') || 'Checkout this post!';
 
         shareButton.addEventListener('click', function() {
             handleShare(shareButton, feedbackEl, {

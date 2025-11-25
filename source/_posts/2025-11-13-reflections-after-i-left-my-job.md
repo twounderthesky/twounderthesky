@@ -4,7 +4,7 @@ title: "Reflections After I Left My Job"
 author: kesha
 date: 2025-11-13
 cover: assets/images/reflection-2.jpg
-tags: [personal, reflections]
+tags: [personal, reflections, philosophy]
 excerpt: What I am learning from my first goal-free career break and the space it has created for self-discovery.
 navigation: True
 class: post-template
