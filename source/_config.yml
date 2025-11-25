@@ -27,7 +27,7 @@ twitter: False # replace by your username
 instagram: 2underthesky
 
 
-# Supabase Configuration (for likes, comments, and page views)
+# Supabase Configuration (for comments and page views)
 # ⚠️ DO NOT commit real values! Use GitHub Secrets or _config_secrets.yml
 supabase_url: YOUR_SUPABASE_URL_HERE
 supabase_anon_key: YOUR_SUPABASE_ANON_KEY_HERE
